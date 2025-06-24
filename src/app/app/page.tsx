@@ -8,7 +8,7 @@ export default function App() {
       <section className="space-y-4">
         <h3 className="text-xl font-semibold">Dispositivos</h3>
 
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col md:flex-row md:items-center gap-4">
           <DeviceCard
             title="Quarto 23"
             identifier="esp32-rm-23"

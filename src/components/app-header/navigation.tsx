@@ -11,12 +11,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const navigationLinks = [
-  { href: "/app", label: "Overview" },
-  { href: "/app/metrics", label: "Métricas" },
-];
+interface NavigationProps {
+  links: {label: string, href: string}[]
+}
 
-export function Navigation() {
+export function Navigation({links}: NavigationProps) {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
 
@@ -29,7 +28,7 @@ export function Navigation() {
   return (
     <NavigationMenu className="h-full *:h-full max-md:hidden">
       <NavigationMenuList className="h-full gap-2">
-        {navigationLinks.map((link, index) => {
+        {links.map((link, index) => {
           const isActive = pathname === link.href;
 
           return (

@@ -4,6 +4,8 @@ import { Separator } from "@/components/ui/separator";
 import { UserMenu } from "./user-menu";
 import { UserSelectProjects } from "./user-select-projects";
 import Link from "next/link";
+
+import { MobileMenu } from "./mobile-menu";
 import { Navigation } from "./navigation";
 
 const additionalLinks = [
@@ -17,28 +19,41 @@ const additionalLinks = [
   },
 ];
 
+const navigationLinks = [
+  {
+    label: "Dashboard",
+    href: "/app",
+  },
+  {
+    label: "Métricas",
+    href: "/app/metrics",
+  },
+];
+
 export function AppHeader() {
   return (
-    <header className="fixed top-0 left-0 w-full h-24 border-b bg-background flex flex-col">
+    <header className="fixed top-0 left-0 w-full md:h-24 border-b bg-background flex flex-col">
       <nav className="h-full w-full px-8 py-3 flex items-center justify-between">
         {/* Left Side */}
-        <div className="h-8 flex items-center gap-3">
+        <div className="h-8 flex items-center gap-2 md:gap-3">
           <Image
             src="/logo.svg"
-            className="w-6"
+            className="hidden md:block w-6"
             width={256}
             height={232}
             alt="Pingo logo"
             draggable={false}
           />
+          <MobileMenu links={[...navigationLinks, ...additionalLinks]} />
+
           <Separator orientation="vertical" />
 
           <UserSelectProjects />
         </div>
 
         {/* Right Side */}
-        <div className="h-8 flex items-center gap-6">
-          <ul className="flex items-center gap-4">
+        <div className="h-8 flex items-center gap-2 md:gap-6">
+          <ul className="hidden md:flex items-center gap-4">
             {additionalLinks.map((link, index) => (
               <li key={index}>
                 <Link
@@ -59,7 +74,7 @@ export function AppHeader() {
       </nav>
 
       <div className="h-full flex items-center gap-6 px-8">
-        <Navigation />
+        <Navigation links={navigationLinks} />
       </div>
     </header>
   );

@@ -19,11 +19,11 @@ export function UserSelectProjects() {
       <SelectPrimitive.Trigger asChild>
         <Button
           variant="ghost"
-          className="focus-visible:bg-accent text-foreground h-8 p-1.5 focus-visible:ring-0"
+          className="w-[212px] justify-start focus-visible:bg-accent text-foreground h-8 p-1.5 focus-visible:ring-0"
         >
           <BoxIcon className="size-4 text-muted-foreground/80" />
           <SelectValue placeholder="Selecione seu projeto" />
-          <ChevronsUpDownIcon className="size-3.5 text-muted-foreground/80" />
+          <ChevronsUpDownIcon className="size-3.5 text-muted-foreground/80 ml-auto" />
         </Button>
       </SelectPrimitive.Trigger>
       <SelectContent>

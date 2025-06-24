@@ -11,7 +11,7 @@ export default function Metrics() {
 
       <section className="space-y-4">
         <h3 className="text-xl font-semibold">Dispositivos</h3>
-        <div className="grid grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
           <StatsCard
             title="Dispositivos Conectados"
             value="02"
@@ -31,25 +31,27 @@ export default function Metrics() {
 
       <section className="space-y-4">
         <h3 className="text-xl font-semibold">Rede</h3>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <StatsCard
+            className="col-span-1"
             title="Uso de Banda-larga"
             value="12.4 MB"
             icon={WifiIcon}
             description="de 50 MB disponíveis"
           />
           <StatsCard
+            className="col-span-1"
             title="Latência Média"
             value="278ms"
             icon={WifiIcon}
             description="Jul 12 - Jul 23"
           />
           <ChartBaseCard
-            className="col-span-2"
+            className="col-span-1 md:col-span-2"
             title="Banda-larga (diariamente)"
             icon={GlobeIcon}
           >
-           <BandwidthChart /> 
+            <BandwidthChart />
           </ChartBaseCard>
         </div>
       </section>

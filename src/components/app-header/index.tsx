@@ -4,8 +4,9 @@ import { Separator } from "@/components/ui/separator";
 import { UserMenu } from "./user-menu";
 import { UserSelectProjects } from "./user-select-projects";
 import Link from "next/link";
+import { Navigation } from "./navigation";
 
-const navLinks = [
+const additionalLinks = [
   {
     label: "Ajuda",
     href: "/help",
@@ -18,12 +19,12 @@ const navLinks = [
 
 export function AppHeader() {
   return (
-    <header className="w-full h-16 border-b">
-      <nav className="h-full w-full px-8 flex items-center justify-between">
+    <header className="w-full h-24 border-b bg-background flex flex-col">
+      <nav className="h-full w-full px-8 py-3 flex items-center justify-between">
         {/* Left Side */}
         <div className="h-8 flex items-center gap-3">
           <Image
-            src="logo.svg"
+            src="/logo.svg"
             className="w-6"
             width={256}
             height={232}
@@ -38,7 +39,7 @@ export function AppHeader() {
         {/* Right Side */}
         <div className="h-8 flex items-center gap-6">
           <ul className="flex items-center gap-4">
-            {navLinks.map((link, index) => (
+            {additionalLinks.map((link, index) => (
               <li key={index}>
                 <Link
                   href={link.href}
@@ -56,6 +57,10 @@ export function AppHeader() {
           <UserMenu />
         </div>
       </nav>
+
+      <div className="h-full flex items-center gap-6 px-8">
+        <Navigation />
+      </div>
     </header>
   );
 }

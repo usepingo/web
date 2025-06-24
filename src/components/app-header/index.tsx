@@ -19,7 +19,7 @@ const additionalLinks = [
 
 export function AppHeader() {
   return (
-    <header className="w-full h-24 border-b bg-background flex flex-col">
+    <header className="fixed top-0 left-0 w-full h-24 border-b bg-background flex flex-col">
       <nav className="h-full w-full px-8 py-3 flex items-center justify-between">
         {/* Left Side */}
         <div className="h-8 flex items-center gap-3">

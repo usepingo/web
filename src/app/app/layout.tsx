@@ -3,9 +3,9 @@ import { PropsWithChildren } from "react";
 
 export default function AppLayout({ children }: PropsWithChildren) {
   return (
-    <div>
+    <div className="relative w-full min-h-screen">
       <AppHeader />
-      <main className="min-h-screen w-full py-6 px-8">{children}</main>
+      <main className="pt-30 h-full w-full pb-6 px-8">{children}</main>
     </div>
   );
 }

@@ -9,7 +9,7 @@ interface DeviceCardProps {
 
 export function DeviceCard({ title, identifier, status }: DeviceCardProps) {
   return (
-    <div className="relative w-52 flex items-center gap-3 border rounded-md p-5 bg-muted-foreground/5 hover:bg-muted-foreground/15 transition-colors cursor-pointer">
+    <div className="relative w-full md:w-52 flex items-center gap-3 border rounded-md p-5 bg-muted/20 hover:bg-muted/80 transition-colors cursor-pointer">
       <div
         title="online"
         className={cn("absolute -top-1 -right-1 size-2.5 rounded-full",
